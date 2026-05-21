@@ -1,10 +1,10 @@
 ---
-name: using-generic-agents
-description: Use to decide what kind of generic agent you should use
+name: using-basic-agents
+description: Use to decide what kind of basic agent you should use
 user-invocable: false
 ---
 
-**CRITICAL:** Your operator's direction supercedes these directions. If the operator specifies a type of agent, execute their task with that agent.
+**CRITICAL NOTE**: The operator's diretions supercedes these directions. Whenever the operator specifies a type of agent to use, you _must_ execute their task with that agent type.
 
 ## Model Characteristics
 
@@ -12,22 +12,24 @@ user-invocable: false
 
 **Sonnet:** Capable of making decisions but gets off-track easily. Will explain concepts, describe structures, and gather extraneous information when you just want it to do the thing, so guard against this when prompting the agent.
 
-**Opus:** Stays on-track through complex tasks. Better judgment, fewer loops. Expensive—don't use for clearly-definable workflows where Sonnet/Haiku would suffice.
+**Opus:** Stays on-track through complex tasks. Better judgment, fewer loops. Expensive and should not be used for easy, clearly-definable tasks where Sonnet or Haiku would suffice instead.
 
 ## When to Use Each
 
 Use `haiku-general-purpose` for:
-- Well-defined tasks with detailed prompts
-- High-volume parallel workflows (cost matters)
-- Simple execution where speed > quality
+- Extremely well scoped tasks with detailed prompts
+- Execution where speed is preferable over quality
+- Efficient search of summarizing of text
 
 Use `sonnet-general-purpose` for:
-- Multi-file reasoning and debugging
-- Tasks requiring some judgment
-- Daily coding work (80-90% of tasks)
+- Reasoning across multiple files
+- Well scoped tasks that require some judgement or thinking
+- Simple coding work, like small refactors or updates
 
 Use `opus-general-purpose` for:
-- Tasks requiring sustained focus and judgment
-- When Sonnet keeps wandering or looping
-- Complex analysis where staying on-track matters
-- High-stakes decisions needing nuance
+- Tasks that require sustained focus and judgement
+- Ambiguous tasks that require sufficient reasoning and judgement to work through
+- Tasks that Sonnet has failed at multiple times
+- Complex analysis of large swaths of a codebase
+- High-stakes decisions that need nuance
+- Medium and large sized coding tasks
