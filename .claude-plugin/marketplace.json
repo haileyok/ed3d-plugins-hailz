@@ -1,11 +1,11 @@
 {
     "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
-    "name": "ed3d-plugins",
+    "name": "ed3d-plugins-hailz",
     "version": "2.0.0",
-    "description": "Unified marketplace for ed3d's Claude Code development toolkit",
+    "description": "Hailey's fork of ed3d-plugins, with personal modifications and additions",
     "owner": {
-        "name": "Ed",
-        "email": "ed@ed3d.net"
+        "name": "Hailey",
+        "email": "me@haileyok.com"
     },
     "plugins": [
         {
@@ -14,8 +14,8 @@
             "version": "1.0.0",
             "source": "./plugins/ed3d-00-getting-started",
             "author": {
-                "name": "Ed",
-                "email": "ed@ed3d.net"
+                "name": "Hailey",
+                "email": "me@haileyok.com"
             }
         },
         {
@@ -24,8 +24,8 @@
             "version": "1.11.0",
             "source": "./plugins/ed3d-plan-and-execute",
             "author": {
-                "name": "Ed",
-                "email": "ed@ed3d.net"
+                "name": "Hailey",
+                "email": "me@haileyok.com"
             }
         },
         {
@@ -34,8 +34,8 @@
             "version": "1.1.0",
             "source": "./plugins/ed3d-house-style",
             "author": {
-                "name": "Ed",
-                "email": "ed@ed3d.net"
+                "name": "Hailey",
+                "email": "me@haileyok.com"
             }
         },
         {
@@ -44,8 +44,8 @@
             "version": "1.1.0",
             "source": "./plugins/ed3d-basic-agents",
             "author": {
-                "name": "Ed",
-                "email": "ed@ed3d.net"
+                "name": "Hailey",
+                "email": "me@haileyok.com"
             },
             "license": "UNLICENSED"
         },
@@ -55,8 +55,8 @@
             "version": "1.1.0",
             "source": "./plugins/ed3d-research-agents",
             "author": {
-                "name": "Ed",
-                "email": "ed@ed3d.net"
+                "name": "Hailey",
+                "email": "me@haileyok.com"
             },
             "license": "UNLICENSED"
         },
@@ -66,8 +66,8 @@
             "version": "1.1.1",
             "source": "./plugins/ed3d-extending-claude",
             "author": {
-                "name": "Ed",
-                "email": "ed@ed3d.net"
+                "name": "Hailey",
+                "email": "me@haileyok.com"
             },
             "license": "UNLICENSED",
             "keywords": [
@@ -84,8 +84,8 @@
             "version": "1.0.1",
             "source": "./plugins/ed3d-hook-skill-reinforcement",
             "author": {
-                "name": "Ed",
-                "email": "ed@ed3d.net"
+                "name": "Hailey",
+                "email": "me@haileyok.com"
             },
             "license": "UNLICENSED",
             "keywords": [
@@ -98,8 +98,8 @@
             "version": "1.0.0",
             "source": "./plugins/ed3d-hook-claudemd-reminder",
             "author": {
-                "name": "Ed",
-                "email": "ed@ed3d.net"
+                "name": "Hailey",
+                "email": "me@haileyok.com"
             },
             "license": "UNLICENSED",
             "keywords": [
@@ -114,8 +114,8 @@
             "version": "1.0.1",
             "source": "./plugins/ed3d-hook-security-hardening",
             "author": {
-                "name": "Ed",
-                "email": "ed@ed3d.net"
+                "name": "Hailey",
+                "email": "me@haileyok.com"
             },
             "license": "UNLICENSED",
             "keywords": [
@@ -131,8 +131,8 @@
             "version": "1.0.1",
             "source": "./plugins/ed3d-playwright",
             "author": {
-                "name": "Ed",
-                "email": "ed@ed3d.net"
+                "name": "Hailey",
+                "email": "me@haileyok.com"
             },
             "license": "UNLICENSED",
             "keywords": [
@@ -149,8 +149,8 @@
             "version": "0.2.0",
             "source": "./plugins/ed3d-session-reflection",
             "author": {
-                "name": "Ed",
-                "email": "ed@ed3d.net"
+                "name": "Hailey",
+                "email": "me@haileyok.com"
             },
             "license": "UNLICENSED",
             "keywords": [

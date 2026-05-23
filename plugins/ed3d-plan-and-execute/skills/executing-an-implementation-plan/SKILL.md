@@ -17,6 +17,11 @@ Execute plan phase-by-phase, loading each phase just-in-time to minimize context
 **When NOT to use:**
 - No implementation plan exists yet (use writing-implementation-plans first)
 - Plan needs revision (brainstorm first)
+- Several independent items (bugs / tickets) to ship in parallel — use
+  `executing-parallel-issue-sweep` instead. That skill dispatches one
+  self-contained owner per item; each owner runs its own
+  implement/review/fix/PR loop, so items iterate truly in parallel
+  instead of waiting at each phase's review gate.
 
 ## MANDATORY: Human Transparency
 

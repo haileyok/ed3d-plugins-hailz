@@ -1,10 +1,10 @@
-# ed3d-plugins
+# ed3d-plugins-hailz
 
-This is my collection of plugins that I use on a day-to-day basis for getting stuff done with Claude Code. Most of these are development-oriented in some way or another, but also often end up being useful for other things. Product design, general research, accidentally becoming my homelab sysadmin—these are a lot of what I've learned so far and what I've found helpful.
+Hailey's personal fork of [`ed3d-plugins`](https://github.com/ed3dai/ed3d-plugins) — Ed's collection of Claude Code plugins for design, implementation, and development workflows. This fork carries personal modifications, additions, and tweaks I've made for my own day-to-day; it diverges from upstream where my workflow needs something different.
 
-The big stick in this repository is `ed3d-plan-and-execute`, which implements an "RPI" (research-plan-implement) loop that I think does a really good job of avoiding hallucination in the planning stages, adhering to high-level product requirements, avoiding drift between design planning and implementation planning, and reviewing the results such that you get out the other end not just what you asked for, but what you actually wanted.
+The big stick is `ed3d-plan-and-execute`, which implements an "RPI" (research-plan-implement) loop that does a really good job of avoiding hallucination in the planning stages, adhering to high-level product requirements, avoiding drift between design planning and implementation planning, and reviewing the results such that you get out the other end not just what you asked for, but what you actually wanted.
 
-**NOTE:** `ed3d-plugins` is generally a more stable marketplace. If you'd like to track changes as they happen a bit more aggressively, take a look at [`ed3d-plugins-testing`](https://github.com/ed3dai/ed3d-plugins-testing).
+**NOTE:** This is *my* fork. If you want the upstream (more stable, more widely tested), see [`ed3dai/ed3d-plugins`](https://github.com/ed3dai/ed3d-plugins).
 
 ## Using `ed3d-plan-and-execute`
 More in [the README for the plugin](plugins/ed3d-plan-and-execute/README.md), and it's worth skimming, but here's a quickstart:
@@ -44,21 +44,21 @@ Rough Idea
 
 ### Add the marketplace
 ```bash
-/plugin marketplace add https://github.com/ed3dai/ed3d-plugins.git
+/plugin marketplace add https://github.com/haileyok/ed3d-plugins-hailz.git
 ```
 
 ### Install plugins
-All plugins are available from the `ed3d-plugins` marketplace:
+All plugins are available from the `ed3d-plugins-hailz` marketplace:
 ```bash
-/plugin install ed3d-plan-and-execute@ed3d-plugins
-/plugin install ed3d-house-style@ed3d-plugins
+/plugin install ed3d-plan-and-execute@ed3d-plugins-hailz
+/plugin install ed3d-house-style@ed3d-plugins-hailz
 # ... etc
 ```
 
 ## Repository Structure
 
 ```
-ed3d-plugins/
+ed3d-plugins-hailz/
 ├── .claude-plugin/
 │   └── marketplace.json
 ├── plugins/
@@ -81,7 +81,9 @@ Issues and pull requests gratefully solicited, except `ed3d-house-style` is _my_
 
 ## Attribution
 
-`ed3d-plan-and-execute` and parts of `ed3d-extending-claude` are derived from [`obra/superpowers`](https://github.com/obra/superpowers) by Jesse Vincent. The original plugin has been folded, spindled, and mutilated extensively.
+This repository is a fork of [`ed3dai/ed3d-plugins`](https://github.com/ed3dai/ed3d-plugins) by Ed. Most of the structure, naming, and core skills are Ed's work; this fork adds my personal modifications on top.
+
+`ed3d-plan-and-execute` and parts of `ed3d-extending-claude` are originally derived from [`obra/superpowers`](https://github.com/obra/superpowers) by Jesse Vincent. The original plugin has been folded, spindled, and mutilated extensively.
 
 Some skills in `ed3d-house-style` are derived from `obra/superpowers` and others (`property-based-testing` is a big one) are derived from the [Trail of Bits Skills repository](https://github.com/trailofbits/skills).
 

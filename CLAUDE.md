@@ -1,6 +1,6 @@
-# ed3d-plugins
+# ed3d-plugins-hailz
 
-Claude Code plugins for design, implementation, and development workflows.
+Hailey's personal fork of [`ed3d-plugins`](https://github.com/ed3dai/ed3d-plugins) — Claude Code plugins for design, implementation, and development workflows.
 
 ## Conventions
 

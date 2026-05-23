@@ -3,8 +3,8 @@
     "description": "Agents used for research across multiple data sources. Other plugins expect this one to be enabled.",
     "version": "1.1.0",
     "author": {
-        "name": "Ed",
-        "email": "ed@ed3d.net"
+        "name": "Hailey",
+        "email": "me@haileyok.com"
     },
     "homepage": "https://github.com/ed3dai/ed3d-research-agents",
     "repository": "https://github.com/ed3dai/ed3d-research-agents",

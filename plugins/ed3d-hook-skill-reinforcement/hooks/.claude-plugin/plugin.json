@@ -3,8 +3,8 @@
     "description": "EXPERIMENTAL. A UserPromptSubmit hook that directs the model to consider and activate useful skills.",
     "version": "1.0.1",
     "author": {
-        "name": "Ed",
-        "email": "ed@ed3d.net"
+        "name": "Hailey",
+        "email": "me@haileyok.com"
     },
     "homepage": "https://github.com/ed3dai/ed3d-hook-skill-reinforcement",
     "repository": "https://github.com/ed3dai/ed3d-hook-skill-reinforcement",
