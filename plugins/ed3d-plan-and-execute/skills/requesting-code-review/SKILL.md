@@ -16,24 +16,15 @@ Dispatch ed3d-plan-and-execute:code-reviewer subagent to catch issues before the
 
 This prevents collisions when multiple planning/execution sessions run in parallel. The SCRATCHPAD_DIR is a namespaced temp directory (e.g., `/tmp/plan-2025-01-24-feature-a7f3b2/`) that the code-reviewer uses for any scratch files.
 
-## Calling context
+## Caller is always the top-level orchestrator
 
-This skill is invoked from two shapes of caller:
-
-1. **An orchestrator session reviewing a feature/phase it just finished.**
-   The orchestrator runs the review loop itself, prints findings to the
-   operator, dispatches the bug-fixer, re-reviews. This is the default
-   shape used by `executing-an-implementation-plan`.
-
-2. **A nested issue-owner subagent self-reviewing its own work.** Used by
-   `executing-parallel-issue-sweep` — each issue's owner agent runs the
-   review/fix loop entirely inside its own context, so multiple issues
-   iterate independently. The loop is identical, but the owner's
-   eventual return value MUST include every cycle's findings verbatim
-   (the orchestrator and operator only see the owner's final report).
-
-Pick the shape based on whether the work is one feature (case 1) or
-several independent items running in parallel (case 2).
+This skill is always invoked from the top-level orchestrator session,
+never from inside a subagent. Subagents in Claude Code cannot dispatch
+their own subagents — the `Task` / `Agent` tool is reserved for the
+orchestrator. Both `executing-an-implementation-plan` (single feature)
+and `executing-parallel-issue-sweep` (multi-issue) call this skill from
+the orchestrator level; the multi-issue case just runs the loop per
+issue concurrently using `run_in_background`.
 
 ## When to Request Review
 

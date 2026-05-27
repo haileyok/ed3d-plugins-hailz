@@ -2,15 +2,15 @@
 
 ## [ed3d-plan-and-execute] [1.12.0]
 
-Add skill + agent for running multiple independent issues in parallel via nested fanout.
+Add skill + agent for running multiple independent issues in parallel via an orchestrator-async pipeline.
 
 **New:**
-- `task-issue-owner` agent (opus): end-to-end owner of a single issue. Implements, verifies via the full pre-commit suite, dispatches its own code-reviewer for self-review, runs the fix-loop until clean, pushes, and opens a draft PR. Opus because the role demands judgment (TDD red→green discipline, multi-pattern orphan-grep for producer/consumer migrations, verbatim cycle reporting) where cheaper models have observably failed.
-- `executing-parallel-issue-sweep` skill: orchestrator dispatches one `task-issue-owner` per issue; each owner runs its own implement / verify / self-review / fix / push / draft-PR loop independently. Captures concrete pitfalls observed in practice — test-without-red (assertions that pass on both base and head), single-grep orphan misses on producer/consumer migrations, piecemeal lint checks vs full pre-commit gate, agent-pushed non-draft PRs bypassing review.
+- `task-issue-implementor` agent (opus): single-issue implementor for parallel sweeps. Investigates if needed, applies TDD red→green, runs the full pre-commit verification suite, commits, and returns evidence. Opus because the role demands judgment (TDD discipline, multi-pattern orphan-grep for producer/consumer migrations, root-cause finding) where cheaper models have observably failed. Scope ends at "verified commit"; the orchestrator owns the surrounding review/fix/push/PR loop because subagents in this Claude Code harness cannot dispatch their own subagents.
+- `executing-parallel-issue-sweep` skill: orchestrator dispatches one `task-issue-implementor` per issue with `run_in_background: true`, then drives each issue's review/fix/PR pipeline independently as completions land. Issues iterate at their own pace instead of waiting at phase boundaries. Captures concrete pitfalls observed in practice — test-without-red (assertions that pass on both base and head), single-grep orphan misses on producer/consumer migrations, piecemeal lint checks vs full pre-commit gate, polling instead of completion-driven advancement.
 
 **Changed:**
 - `executing-an-implementation-plan` now points at `executing-parallel-issue-sweep` for the independent-items case, since its phased-plan review loop unnecessarily serializes parallel work.
-- `requesting-code-review` documents the two calling contexts (orchestrator-driven vs nested issue-owner) and notes the verbatim-cycle-log requirement when invoked from inside an issue-owner.
+- `requesting-code-review` clarifies that it's always invoked from the top-level orchestrator (never from inside a subagent), since subagents cannot dispatch the code-reviewer themselves.
 
 ## [ed3d-house-style] [1.1.0]
 
